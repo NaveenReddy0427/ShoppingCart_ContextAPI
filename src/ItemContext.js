@@ -27,10 +27,14 @@ function CustomContext(props){
         setItem(item-1)
       };
 
+      const handleReset = ()=>{
+        setTotal(0)
+        setItem(0)
+      }
 
     return(
         <>
-        <ItemContext.Provider value={{total, item, handleAdd, handleRemove}}>
+        <ItemContext.Provider value={{total, item, handleAdd, handleRemove, handleReset}}>
             {props.children}
         </ItemContext.Provider>
         
