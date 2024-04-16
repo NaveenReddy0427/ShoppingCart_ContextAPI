@@ -12,6 +12,7 @@ function CustomContext(props){
 
     const [ total, setTotal ] = useState('')
     const [ item, setItem ] = useState('')
+    const [ showCart, setShowCart] = useState(false)
     
     const handleAdd = (price) => {
         setTotal(total + price)
@@ -32,9 +33,13 @@ function CustomContext(props){
         setItem(0)
       }
 
+      const handleToggle= ()=>{
+        setShowCart(!showCart)
+      }
+
     return(
         <>
-        <ItemContext.Provider value={{total, item, handleAdd, handleRemove, handleReset}}>
+        <ItemContext.Provider value={{total, item, handleAdd, handleRemove, handleReset, handleToggle}}>
             {props.children}
         </ItemContext.Provider>
         
